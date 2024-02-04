@@ -1,4 +1,5 @@
 ---
+
 title: DGMJR - Entity Framework Core
 lastmod: 2023-07-13T05:34:04.553Z
 date: 2023-07-13T05:33:37.492Z
@@ -8,12 +9,12 @@ slug: dgmjr-entity-framework-core
 project: Dgmjr.EntityFrameworkCore
 description: Contains abstractions, extensions, and classes for working with EntityFrameworkCore.
 authors:
-  - dgmjr
+- dgmjr
 keywords:
-  - database
-  - entityframeworkcore
+- database
+- entityframeworkcore
 version: 0.0.1
----
+--------------
 
 # DGMJR - Entity Framework Core
 
