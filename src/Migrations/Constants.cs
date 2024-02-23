@@ -13,37 +13,38 @@ public static class Constants
     public const string CreateOrAlterFunctionPattern = """
         CREATE OR ALTER FUNCTION {0}.{1}({2})
         RETURNS {3}
-        AS
-        BEGIN
-        {4}
-        END
+AS
+BEGIN
+{4}
+END
         """;
     public const string CreateOrAlterViewPattern = """
-        CREATE OR ALTER VIEW {0}.{1}
-        AS
-        {2}
-        """;
+        CREATE OR ALTER VIEW {0}.{ 1}
+AS
+{ 2}
+""";
     public const string CreateOrAlterProcedurePattern = """
-        CREATE OR ALTER PROCEDURE {0}.{1} {2}
-        AS
-        BEGIN
-        {3}
-        END
+        CREATE OR ALTER PROCEDURE {0}.{ 1}
+{ 2}
+AS
+BEGIN
+{3}
+END
         """;
 
     public const string Function = "FUNCTION";
-    public const string Procedure = "PROCEDURE";
-    public const string View = "VIEW";
+public const string Procedure = "PROCEDURE";
+public const string View = "VIEW";
 
-    public const string DropFunctionIfExistsPattern = "DROP FUNCTION IF EXISTS {0}.{1}";
-    public const string DropProcedureIfExistsPattern = "DROP PROCEDURE IF EXISTS {0}.{1}";
-    public const string DropViewIfExistsPattern = "DROP VIEW IF EXISTS {0}.{1}";
-    public const string DropSomethingIfExistsPattern = "DROP {0} IF EXISTS {1}.{2}";
+public const string DropFunctionIfExistsPattern = "DROP FUNCTION IF EXISTS {0}.{1}";
+public const string DropProcedureIfExistsPattern = "DROP PROCEDURE IF EXISTS {0}.{1}";
+public const string DropViewIfExistsPattern = "DROP VIEW IF EXISTS {0}.{1}";
+public const string DropSomethingIfExistsPattern = "DROP {0} IF EXISTS {1}.{2}";
 
-    public static readonly IReadOnlyDictionary<Type, string> ClrTypeToSqlTypeMap = new Dictionary<
-        Type,
-        string
-    >
+public static readonly IReadOnlyDictionary<Type, string> ClrTypeToSqlTypeMap = new Dictionary<
+    Type,
+    string
+>
     {
         { typeof(string), NVarCharMax.ShortName },
         { typeof(int), Int.ShortName },

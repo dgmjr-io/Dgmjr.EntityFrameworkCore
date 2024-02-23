@@ -8,46 +8,46 @@ public readonly partial struct Slug(string? Value = default) : IComparable<Slug>
     public Slug()
         : this(NewSlug()) { }
 
-    public string Value { get; init; } = Value ?? NewSlug();
+public string Value { get; init; } = Value ?? NewSlug();
 
-    public int CompareTo(Slug other)
-        => Compare(Value, other.Value, OrdinalIgnoreCase);
+public int CompareTo(Slug other)
+    => Compare(Value, other.Value, OrdinalIgnoreCase);
 
-    public int CompareTo(object obj)
-        => obj is Slug other ? CompareTo(other) : 1;
+public int CompareTo(object obj)
+    => obj is Slug other ? CompareTo(other) : 1;
 
-    public static string NewSlug()
-        => guid.NewGuid().ToString("N").Substring(0, 6).ToLowerInvariant();
+public static string NewSlug()
+    => guid.NewGuid().ToString("N").Substring(0, 6).ToLowerInvariant();
 
-    public override string ToString()
-        => Value;
+public override string ToString()
+    => Value;
 
-    public bool Equals(Slug other)
-        => CompareTo(other) == 0;
+public bool Equals(Slug other)
+    => CompareTo(other) == 0;
 
-    public override bool Equals(object? obj)
-        => obj is Slug other && Equals(other);
+public override bool Equals(object? obj)
+    => obj is Slug other && Equals(other);
 
-    public override int GetHashCode()
-        => Value.GetHashCode();
+public override int GetHashCode()
+    => Value.GetHashCode();
 
-    public static bool operator==(Slug left, Slug right)
-        => left.Equals(right);
+public static bool operator ==(Slug left, Slug right)
+    => left.Equals(right);
 
-    public static bool operator!=(Slug left, Slug right)
-        => !left.Equals(right);
+public static bool operator !=(Slug left, Slug right)
+    => !left.Equals(right);
 
-    public static bool operator<(Slug left, Slug right)
-        => left.CompareTo(right) < 0;
+public static bool operator <(Slug left, Slug right)
+    => left.CompareTo(right) < 0;
 
-    public static bool operator<=(Slug left, Slug right)
-        => left.CompareTo(right) <= 0;
+public static bool operator <=(Slug left, Slug right)
+    => left.CompareTo(right) <= 0;
 
-    public static bool operator>(Slug left, Slug right)
-        => left.CompareTo(right) > 0;
+public static bool operator >(Slug left, Slug right)
+    => left.CompareTo(right) > 0;
 
-    public static bool operator>=(Slug left, Slug right)
-        => left.CompareTo(right) >= 0;
+public static bool operator >=(Slug left, Slug right)
+    => left.CompareTo(right) >= 0;
 }
 
 public class SlugEfCoreConverter : ValueConverter<Slug, string>
